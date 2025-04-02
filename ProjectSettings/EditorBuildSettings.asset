@@ -12,5 +12,6 @@ EditorBuildSettings:
     path: Assets/VRMesivo/Scenes/MainGame.unity
     guid: 5f6b5844a8ded6b4cb6be3816bc54aa8
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6ce5e8cb1fd10344f8eeec05da9e6d32, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: edb5d6477de6aa0478bbb26bda331b95, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c66cc2b69ca7a974c969505e671b6dda, type: 2}

@@ -1,7 +1,6 @@
 using Fusion;
-using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : NetworkBehaviour
 {
@@ -11,7 +10,7 @@ public class PlayerMovement : NetworkBehaviour
 
     [SerializeField] private float _playerSpeed = 2f;
     [SerializeField] private float _rotationSpeed = 2f;
-    
+
     private const string _runningState = "IsRunning";
     [Networked] private bool IsRunning { get; set; }
     private GameController _gameController;
@@ -23,7 +22,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        if (_gameController.GameContinue) 
+        if (_gameController.GameContinue)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
@@ -46,5 +45,4 @@ public class PlayerMovement : NetworkBehaviour
     {
         _animator.SetBool(_runningState, IsRunning);
     }
-
 }
