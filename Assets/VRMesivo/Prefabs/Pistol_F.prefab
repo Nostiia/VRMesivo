@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2977210842988545536}
-  - component: {fileID: 9200597137480108500}
+  - component: {fileID: 2702020787237867081}
   m_Layer: 0
   m_Name: Pistol_F
   m_TagString: Untagged
@@ -108,9 +108,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2457555617677991098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.353, y: 0.458, z: 0.618}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9222097872169198841}
@@ -122,8 +122,8 @@ Transform:
   - {fileID: 5103225073658046028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &9200597137480108500
-CapsuleCollider:
+--- !u!65 &2702020787237867081
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,11 +140,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.05
-  m_Height: 0.3
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.02, z: 0.03}
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.2, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2839428152076270863
 GameObject:
   m_ObjectHideFlags: 0

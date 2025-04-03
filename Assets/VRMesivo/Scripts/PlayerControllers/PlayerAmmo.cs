@@ -6,14 +6,12 @@ using Zenject;
 public class PlayerAmmo : NetworkBehaviour
 {
     [Networked] public int Ammo { get; set; } = 5;
-
-    private TMP_Text _ammoText;
+    [SerializeField] private TMP_Text _ammoText;
     private int _ammoMax;
-    private const string AmmoText = "AmmoText";
+
 
     private void Start()
     {
-        _ammoText = GameObject.Find(AmmoText).GetComponent<TMP_Text>();
         _ammoMax = Ammo;
         UpdateAmmoUI();
     }

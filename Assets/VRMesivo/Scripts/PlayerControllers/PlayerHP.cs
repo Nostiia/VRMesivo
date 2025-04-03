@@ -19,7 +19,6 @@ public class PlayerHP : NetworkBehaviour
     [Networked] public bool _enemyDied { get; set; } = false;
 
     private const string _hittedState = "IsHitted";
-    [SerializeField] private Animator _animator;
     [Networked] private bool IsHitted { get; set; }
     private GameController _gameController;
 
@@ -58,11 +57,6 @@ public class PlayerHP : NetworkBehaviour
         {
             _hpText.text = $"HP: {HP} / {_hpMax}";
         }
-    }
-
-    public override void Render()
-    {
-        _animator.SetBool(_hittedState, IsHitted);
     }
 
     private IEnumerator HitAnimation()
