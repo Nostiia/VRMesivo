@@ -10,7 +10,11 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
     {
         if (player == Runner.LocalPlayer)
         {
-            Runner.Spawn(_playerPrefab, _position, Quaternion.identity);
+            // Spawn the player and get the reference to the spawned object
+            NetworkObject spawnedPlayer = Runner.Spawn(_playerPrefab, _position, Quaternion.identity, player);
+
+            // Find XR Camera Follower and assign the spawned player
+            FindObjectOfType<XRCameraFollower>().SetTarget(spawnedPlayer);
         }
     }
 }
