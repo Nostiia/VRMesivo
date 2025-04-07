@@ -35,7 +35,7 @@ public class PlayerAmmo : NetworkBehaviour
     {
         if (_ammoText != null)
         {
-            _ammoText.text = $"Ammo: {Ammo} / {_ammoMax}";
+            _ammoText.text = $"{Ammo} / {_ammoMax}";
         }
     }
 

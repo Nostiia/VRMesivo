@@ -7,7 +7,7 @@ public class FireBulletOnActivate : NetworkBehaviour
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletTarget;
 
-    [SerializeField] private PlayerAmmo _playerAmmo;
+    private PlayerAmmo _playerAmmo;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class FireBulletOnActivate : NetworkBehaviour
 
     public void FireBullet(ActivateEventArgs arg)
     {
-        if (_playerAmmo.Ammo > 0)
+        if (_playerAmmo != null && _playerAmmo.Ammo > 0)
         { 
             Vector3 direction = (_bulletTarget.position - transform.position).normalized;
 
@@ -29,5 +29,15 @@ public class FireBulletOnActivate : NetworkBehaviour
 
             _playerAmmo.DecrementAmmo();
         }
+    }
+
+    public void SetPlayerAmmo(PlayerAmmo newAmmo)
+    {
+        _playerAmmo = newAmmo;
+    }
+
+    public void ClearAmmo()
+    {
+        _playerAmmo = null;
     }
 }

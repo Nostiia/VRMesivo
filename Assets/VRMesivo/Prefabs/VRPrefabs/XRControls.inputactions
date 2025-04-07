@@ -1,0 +1,34 @@
+{
+    "name": "XRControls",
+    "maps": [
+        {
+            "name": "XRI LeftHand",
+            "id": "b025b379-efaf-4a9b-a64d-4dd443b37ace",
+            "actions": [
+                {
+                    "name": "XButton",
+                    "type": "Button",
+                    "id": "d3d89e8f-a292-4492-a113-ff2c99771ac5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "34970f61-6d89-4d02-b501-5d5898e5a72d",
+                    "path": "<XRInputV1::Oculus::OculusTouchControllerOpenXR>{LeftHand}/primarybutton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
