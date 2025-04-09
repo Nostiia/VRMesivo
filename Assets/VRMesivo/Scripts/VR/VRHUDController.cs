@@ -4,15 +4,12 @@ using UnityEngine.InputSystem;
 
 public class VRHUDController : MonoBehaviour
 {
-    public GameObject canvas;
-    public TMP_Text timerText;
-    public TMP_Text ammoText;
-    public TMP_Text hpText;
+    [SerializeField] private GameObject canvas;
 
     private InputAction xButtonAction;
     private bool isVisible = false;
 
-    public InputActionReference xButton;
+    [SerializeField] private InputActionReference xButton;
 
 
     void Awake()

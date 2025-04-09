@@ -34,6 +34,7 @@ public class FireBulletOnActivate : NetworkBehaviour
     public void SetPlayerAmmo(PlayerAmmo newAmmo)
     {
         _playerAmmo = newAmmo;
+        _playerAmmo.UpdateAmmoUI();
     }
 
     public void ClearAmmo()

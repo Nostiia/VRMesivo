@@ -1787,8 +1787,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8681140174316314580}
-  - component: {fileID: 2536456027205230584}
   - component: {fileID: 7228389410558316673}
+  - component: {fileID: 2536456027205230584}
   - component: {fileID: 1463650218440104364}
   - component: {fileID: 4976850364864619968}
   - component: {fileID: 1042552074342529698}
@@ -1796,6 +1796,8 @@ GameObject:
   - component: {fileID: 3685807903681467536}
   - component: {fileID: -4503594898022683808}
   - component: {fileID: 4293166623220412959}
+  - component: {fileID: 7493210167054412441}
+  - component: {fileID: 4581453323512763661}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)WithCanvas
   m_TagString: Untagged
@@ -1822,24 +1824,6 @@ Transform:
   - {fileID: 7060154570359883379}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2536456027205230584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789340238105717999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16cdbcbbcde100040919ff6330683e2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _yellowPosition: {fileID: 0}
-  _redPosition: {fileID: 0}
-  _yellowTeam: {fileID: 0}
-  _redTeam: {fileID: 0}
-  _timerManager: {fileID: 0}
-  _readyButton: {fileID: 8770437299618470314}
 --- !u!114 &7228389410558316673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,7 +1842,27 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 2536456027205230584}
+  - {fileID: 7493210167054412441}
+  - {fileID: 4581453323512763661}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &2536456027205230584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789340238105717999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cdbcbbcde100040919ff6330683e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yellowPosition: {fileID: 0}
+  _redPosition: {fileID: 0}
+  _yellowTeam: {fileID: 0}
+  _redTeam: {fileID: 0}
+  _timerManager: {fileID: 0}
+  _readyButton: {fileID: 8770437299618470314}
 --- !u!114 &1463650218440104364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +2030,50 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &7493210167054412441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789340238105717999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957a3b14cf4245549970e0500b3186cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptsToDisable:
+  - {fileID: 1463650218440104364}
+  - {fileID: 4976850364864619968}
+  - {fileID: 3685807903681467536}
+  - {fileID: -4503594898022683808}
+  - {fileID: 4293166623220412959}
+  objectsToDisable:
+  - {fileID: 1241548918238891519}
+  - {fileID: 2742278235482890228}
+  - {fileID: 2587564820352195230}
+  - {fileID: 1361504759044930943}
+  - {fileID: 4661078083538787763}
+--- !u!114 &4581453323512763661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789340238105717999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a498e34ce5cb484cbb28a87627ce7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 7675188124379754798}
+  leftHand: {fileID: 3055112867888168478}
+  rightHand: {fileID: 1051435728595607212}
+  body: {fileID: 2750358048152375897}
+  netHead: {fileID: 0}
+  netLeft: {fileID: 0}
+  netRight: {fileID: 0}
+  netBody: {fileID: 0}
 --- !u!1 &5071062662925715463
 GameObject:
   m_ObjectHideFlags: 0

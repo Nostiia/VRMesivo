@@ -7,15 +7,15 @@ public class AvatarManager : NetworkBehaviour
     private NetworkObject _currentNetworkObject;
     [Networked] public int IndexOfChoosen { get; private set; } = -1;
 
-    private bool isChangingAvatar = false;
+    private bool _isChangingAvatar = false;
     private Transform _teamPosition;
 
     public void DeSpawned(NetworkObject player, Transform yellowTeam, Transform redTeam)
     {
         _currentNetworkObject = player;
-        if (!isChangingAvatar)
+        if (!_isChangingAvatar)
         {
-            isChangingAvatar = true;
+            _isChangingAvatar = true;
             ChooseAvatar();
             ChangeAvatar(IndexOfChoosen, player, yellowTeam, redTeam);         
         }

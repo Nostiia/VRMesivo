@@ -8,8 +8,6 @@ public class PlayerDefault : NetworkBehaviour
     private GameObject _playerPrefab;
     private Transform _teamPosition;
 
-    private MagazineManager _magazineManager;
-
     public void SetValues(GameObject _playerPref, Transform _teamPos)
     {
         _playerPrefab = _playerPref;
@@ -18,9 +16,7 @@ public class PlayerDefault : NetworkBehaviour
 
     public void SetDefault()
     {
-        _magazineManager = FindObjectOfType<MagazineManager>();
         RPC_RequestSpawnToStart();
-        _magazineManager.DespawnedAndSpawned();
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]

@@ -8,9 +8,7 @@ public class ResultManager : MonoBehaviour
 {
     [SerializeField] private GameObject _winScreen;
     [SerializeField] private GameObject _loseScreen;
-    [SerializeField] private GameController _gameController;
     [SerializeField] private GameObject _drawResultScreen;
-    [SerializeField] private GameObject _gameCanvas;
 
     private const string _sceneName = "StartGame";
 
@@ -26,7 +24,6 @@ public class ResultManager : MonoBehaviour
 
     public void ActivateDrawResult()
     {
-        _gameCanvas.SetActive(false);
         _drawResultScreen.SetActive(true);
     }
 

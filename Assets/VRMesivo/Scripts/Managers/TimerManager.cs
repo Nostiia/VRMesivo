@@ -8,7 +8,8 @@ public class TimerManager : NetworkBehaviour
     [Networked] public int ReadyPlayers { get; private set; } = 0;
     [Networked] private TickTimer GameTimer { get; set; }
 
-    [SerializeField] private TMP_Text _timerText;
+    private const string _timer = "TimerText";
+    private TMP_Text _timerText;
 
     private readonly int _trainingDurations = 30;
     private readonly int _gameDurations = 300;
@@ -17,8 +18,13 @@ public class TimerManager : NetworkBehaviour
     private bool _isStarted = false;
 
     [SerializeField] private GameController _gameController;
-    [SerializeField] private ResultManager _resultManager;
+    private ResultManager _resultManager;
 
+    public override void Spawned()
+    {
+        _timerText = GameObject.Find(_timer).GetComponent<TMP_Text>();
+        _resultManager = FindObjectOfType<ResultManager>();
+    }
     public void StartGame()
     {
         _isStarted = true;
@@ -77,7 +83,7 @@ public class TimerManager : NetworkBehaviour
 
     private void HandleTrainingTimer()
     {
-        if (TrainingTimer.IsRunning )
+        if (TrainingTimer.IsRunning)
         {
             if (TrainingTimer.Expired(Runner))
             {
