@@ -8,9 +8,9 @@ public class AvatarManager : NetworkBehaviour
     [Networked] public int IndexOfChoosen { get; private set; } = -1;
 
     private bool _isChangingAvatar = false;
-    private Transform _teamPosition;
+    private Vector3 _teamPosition;
 
-    public void DeSpawned(NetworkObject player, Transform yellowTeam, Transform redTeam)
+    public void DeSpawned(NetworkObject player, Vector3 yellowTeam, Vector3 redTeam)
     {
         _currentNetworkObject = player;
         if (!_isChangingAvatar)
@@ -23,7 +23,6 @@ public class AvatarManager : NetworkBehaviour
 
     public void ChooseAvatar()
     {
-        Debug.Log(IndexOfChoosen);
         if (IndexOfChoosen == -1)
         {
             IndexOfChoosen = Random.Range(0, _playerPrefabs.Length);
@@ -35,7 +34,7 @@ public class AvatarManager : NetworkBehaviour
         RPC_SetChosenAvatar(IndexOfChoosen);
     }
 
-    public void ChangeAvatar(int newIndex, NetworkObject player, Transform yellowTeam, Transform redTeam)
+    public void ChangeAvatar(int newIndex, NetworkObject player, Vector3 yellowTeam, Vector3 redTeam)
     {        
         switch (newIndex)
         {
@@ -53,10 +52,12 @@ public class AvatarManager : NetworkBehaviour
 
         _currentNetworkObject = Runner.Spawn(
             _playerPrefabs[newIndex],
-            _teamPosition.position,
+            _teamPosition,
             Quaternion.identity,
             Object.InputAuthority
         );
+        Debug.Log($"Spawning player at {_teamPosition}");
+        Debug.Log(_currentNetworkObject.transform.position);
 
         if (_currentNetworkObject.TryGetComponent(out PlayerDefault playerScript))
         {

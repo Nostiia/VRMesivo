@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f6f260cc623a94c9e047a23efb4750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 12536095290185151}
-  xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
+  _canvas: {fileID: 12536095290185151}
+  _xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
 --- !u!1 &177796134514473843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,6 @@ GameObject:
   - component: {fileID: 9057888867119295019}
   - component: {fileID: 24912861709719078}
   - component: {fileID: 9029071519802737669}
-  - component: {fileID: 5331267848750277155}
   - component: {fileID: 2864360202732267772}
   m_Layer: 0
   m_Name: ResultCanvas
@@ -1247,20 +1246,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &5331267848750277155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334055665010742852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f6f260cc623a94c9e047a23efb4750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 2334055665010742852}
-  xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
 --- !u!114 &2864360202732267772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,6 +1261,7 @@ MonoBehaviour:
   _winScreen: {fileID: 177796134514473843}
   _loseScreen: {fileID: 5088656880079606702}
   _drawResultScreen: {fileID: 5206974969680957280}
+  _gameCanvas: {fileID: 12536095290185151}
 --- !u!1 &2440768499014337476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,7 +2661,7 @@ Transform:
   m_GameObject: {fileID: 4789340238105717999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.8, y: 7.7, z: 149}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2914,9 +2900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a3b14cf4245549970e0500b3186cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsToDisable:
+  _scriptsToDisable:
   - {fileID: 1463650218440104364}
   - {fileID: 4976850364864619968}
+  - {fileID: -5984422332178192767}
   - {fileID: 3685807903681467536}
   - {fileID: -4503594898022683808}
   - {fileID: 4293166623220412959}
@@ -2924,14 +2911,13 @@ MonoBehaviour:
   - {fileID: 5025330756036085412}
   - {fileID: 6696526657718997180}
   - {fileID: 114320442739058391}
-  objectsToDisable:
+  _objectsToDisable:
+  - {fileID: 1662932756719937993}
   - {fileID: 1241548918238891519}
   - {fileID: 2742278235482890228}
   - {fileID: 2587564820352195230}
   - {fileID: 12536095290185151}
   - {fileID: 2334055665010742852}
-  - {fileID: 1662932756719937993}
-  - {fileID: 4661078083538787763}
 --- !u!114 &3949746411898776371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,6 +2930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a498e34ce5cb484cbb28a87627ce7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _NetworkedPosition: {x: -8, y: 1, z: 17}
+  _NetworkedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5081880216723500531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4818,8 +4806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a9c73b2926deb4f9d4853be7dc39e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 7927565587412944733}
-  fireScript: {fileID: 8596211032207859278}
+  _socket: {fileID: 7927565587412944733}
+  _fireScript: {fileID: 8596211032207859278}
 --- !u!114 &4786477333723865859 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 950532333075503225, guid: 4a8511d5217e96241a6cf845feb2ec8b, type: 3}

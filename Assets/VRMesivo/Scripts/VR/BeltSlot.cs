@@ -18,7 +18,7 @@ public class BeltSlot : MonoBehaviour
                 _grabInteractable.selectEntered.AddListener(OnGrab);
                 _grabInteractable.selectExited.AddListener(OnRelease);
 
-            StoreGunImmediately(); // Snap to belt at start
+            StoreGunImmediately(); 
         }
     }
 
@@ -36,7 +36,6 @@ public class BeltSlot : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.None;
         _isHeld = true;
 
-        // Cancel storing if we grab it during delay
         if (_storeCoroutine != null)
         {
             StopCoroutine(_storeCoroutine);
@@ -48,7 +47,6 @@ public class BeltSlot : MonoBehaviour
     {
         _isHeld = false;
 
-        // Start delayed store
         if (_storeCoroutine == null)
         {
             _storeCoroutine = StartCoroutine(DelayedStore());
@@ -59,7 +57,6 @@ public class BeltSlot : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        // Only store if still not held
         if (!_isHeld)
         {
             StoreGunImmediately();

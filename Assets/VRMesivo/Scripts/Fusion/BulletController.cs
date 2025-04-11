@@ -4,7 +4,7 @@ using UnityEngine;
 public class BulletController : NetworkBehaviour
 {
     [Networked] private TickTimer Life { get; set; }
-    public int Damage { get; set; } = 10;
+    public int Damage { get; private set; } = 10;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Collider _collider;
 
@@ -27,7 +27,6 @@ public class BulletController : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
         PlayerHP enemy = other.gameObject.GetComponent<PlayerHP>();
         if (enemy != null && Object != null)
         {

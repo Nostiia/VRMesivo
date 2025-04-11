@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class TransformSync : NetworkBehaviour
 {
-    [Networked] private Vector3 NetworkedPosition { get; set; }
-    [Networked] private Quaternion NetworkedRotation { get; set; }
+    [Networked] public Vector3 NetworkedPosition { get; set; }
+    [Networked] public Quaternion NetworkedRotation { get; set; }
 
-    private Vector3 lastSentPosition;
-    private Quaternion lastSentRotation;
+    private Vector3 _lastSentPosition;
+    private Quaternion _lastSentRotation;
 
     private void Update()
     {
@@ -16,14 +16,14 @@ public class TransformSync : NetworkBehaviour
             Vector3 currentPos = transform.position;
             Quaternion currentRot = transform.rotation;
 
-            if (Vector3.Distance(lastSentPosition, currentPos) > 0.01f ||
-                Quaternion.Angle(lastSentRotation, currentRot) > 0.5f)
+            if (Vector3.Distance(_lastSentPosition, currentPos) > 0.01f ||
+                Quaternion.Angle(_lastSentRotation, currentRot) > 0.5f)
             {
                 NetworkedPosition = currentPos;
                 NetworkedRotation = currentRot;
 
-                lastSentPosition = currentPos;
-                lastSentRotation = currentRot;
+                _lastSentPosition = currentPos;
+                _lastSentRotation = currentRot;
             }
         }
         else
@@ -35,10 +35,18 @@ public class TransformSync : NetworkBehaviour
 
     public override void Spawned()
     {
-        transform.position = NetworkedPosition;
-        transform.rotation = NetworkedRotation;
+        if (Object.HasInputAuthority)
+        {
+            NetworkedPosition = transform.position;
+            NetworkedRotation = transform.rotation;
+        }
+        else
+        {
+            transform.position = NetworkedPosition;
+            transform.rotation = NetworkedRotation;
+        }
 
-        lastSentPosition = transform.position;
-        lastSentRotation = transform.rotation;
+        _lastSentPosition = transform.position;
+        _lastSentRotation = transform.rotation;
     }
 }

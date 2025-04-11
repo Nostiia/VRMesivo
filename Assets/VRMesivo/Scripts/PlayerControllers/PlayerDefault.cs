@@ -6,9 +6,9 @@ public class PlayerDefault : NetworkBehaviour
     private NetworkObject _currentNetworkObject;
 
     private GameObject _playerPrefab;
-    private Transform _teamPosition;
+    private Vector3 _teamPosition;
 
-    public void SetValues(GameObject _playerPref, Transform _teamPos)
+    public void SetValues(GameObject _playerPref, Vector3 _teamPos)
     {
         _playerPrefab = _playerPref;
         _teamPosition = _teamPos;
@@ -26,7 +26,7 @@ public class PlayerDefault : NetworkBehaviour
 
         _currentNetworkObject = Runner.Spawn(
             _playerPrefab,
-            _teamPosition.position,
+            _teamPosition,
             Quaternion.identity,
             Object.InputAuthority
         );

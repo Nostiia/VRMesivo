@@ -12,19 +12,21 @@ public class TimerManager : NetworkBehaviour
     private TMP_Text _timerText;
 
     private readonly int _trainingDurations = 30;
-    private readonly int _gameDurations = 300;
+    private readonly int _gameDurations = 10;
 
     public bool IsGameTime { get; private set; } = false;
     private bool _isStarted = false;
 
-    [SerializeField] private GameController _gameController;
+    [SerializeField] private GameManager _gameController;
     private ResultManager _resultManager;
 
-    public override void Spawned()
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void FindTimerTextRPC()
     {
         _timerText = GameObject.Find(_timer).GetComponent<TMP_Text>();
         _resultManager = FindObjectOfType<ResultManager>();
     }
+
     public void StartGame()
     {
         _isStarted = true;
@@ -40,7 +42,6 @@ public class TimerManager : NetworkBehaviour
     public void RPC_IncrementPlayers()
     {
         ReadyPlayers++;
-        Debug.Log(ReadyPlayers);
     }
 
     public void StartTraining()
@@ -65,9 +66,9 @@ public class TimerManager : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        Debug.Log(ReadyPlayers);
         if (!_isStarted && ReadyPlayers == 2)
         {
+            FindTimerTextRPC();
             _gameController.StartTraining();
             StartGame();
         }
@@ -107,8 +108,7 @@ public class TimerManager : NetworkBehaviour
         {
             if (GameTimer.Expired(Runner))
             {
-                Debug.Log("Draw result");
-                _resultManager.ActivateDrawResult();
+                _resultManager.ActivateDrawResultRPC();
             }
             else
             {

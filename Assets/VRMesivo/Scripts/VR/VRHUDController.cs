@@ -1,33 +1,32 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.InputSystem;
 
 public class VRHUDController : MonoBehaviour
 {
-    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject _canvas;
 
-    private InputAction xButtonAction;
-    private bool isVisible = false;
+    private InputAction _xButtonAction;
+    private bool _isVisible = false;
 
-    [SerializeField] private InputActionReference xButton;
+    [SerializeField] private InputActionReference _xButton;
 
 
-    void Awake()
+    private void Awake()
     {
-        xButtonAction = xButton;
+        _xButtonAction = _xButton;
 
-        xButtonAction.Enable();
-        xButtonAction.performed += ToggleCanvas;
+        _xButtonAction.Enable();
+        _xButtonAction.performed += ToggleCanvas;
     }
 
     private void ToggleCanvas(InputAction.CallbackContext ctx)
     {
-        isVisible = !isVisible;
-        canvas.SetActive(isVisible);
+        _isVisible = !_isVisible;
+        _canvas.SetActive(_isVisible);
     }
 
     private void OnDestroy()
     {
-        xButtonAction.performed -= ToggleCanvas;
+        _xButtonAction.performed -= ToggleCanvas;
     }
 }

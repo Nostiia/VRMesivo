@@ -5,7 +5,7 @@ using System.Collections;
 
 public class PlayerHP : NetworkBehaviour
 {
-    [Networked] public int HP { get; set; } = 20;
+    [Networked] public int HP { get; private set; } = 20;
 
     [SerializeField] private TMP_Text _hpText;
     private int _hpMax;
@@ -15,13 +15,13 @@ public class PlayerHP : NetworkBehaviour
 
     [Networked] public bool _enemyDied { get; set; } = false;
 
-    private GameController _gameController;
+    private GameManager _gameController;
 
     private void Start()
     {
         _resultManager = FindObjectOfType<ResultManager>();
         _enemy = FindObjectOfType<PlayerHP>();
-        _gameController = FindAnyObjectByType<GameController>();
+        _gameController = FindAnyObjectByType<GameManager>();
         _hpMax = HP;
 
         UpdateHPUI();
@@ -38,7 +38,7 @@ public class PlayerHP : NetworkBehaviour
         if (_enemyDied && _gameController.GameTimeStarts)
         {
             _gameController.EndGame();
-            _resultManager.ActivateWinScreen();                              
+            _resultManager.ActivateWinScreenRPC();                              
         }
     }
 
@@ -85,7 +85,7 @@ public class PlayerHP : NetworkBehaviour
     {
         if (_gameController.GameTimeStarts)
         {
-            _resultManager.ActivateLoseScreen();
+            _resultManager.ActivateLoseScreenRPC();
         }
       
     }

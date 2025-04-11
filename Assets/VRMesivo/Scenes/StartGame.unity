@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 26990503}
   - component: {fileID: 26990502}
   - component: {fileID: 26990504}
+  - component: {fileID: 26990505}
   m_Layer: 0
   m_Name: StartCanvas
   m_TagString: Untagged
@@ -368,6 +369,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &26990505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26990499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &33786855
 GameObject:
   m_ObjectHideFlags: 0
@@ -11885,7 +11903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 4789340238105717999, guid: d51718e04e264894c8dbc95a3ab8458e, type: 3}
-  _position: {x: -13.8, y: 7.7, z: 149}
+  _position: {x: -13, y: 1, z: 149}
 --- !u!1001 &1976680516
 PrefabInstance:
   m_ObjectHideFlags: 0

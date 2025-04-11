@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f6f260cc623a94c9e047a23efb4750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1361504759044930943}
-  xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
+  _canvas: {fileID: 1361504759044930943}
+  _xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
 --- !u!1 &1398508976151132101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,7 +2545,7 @@ Transform:
   m_GameObject: {fileID: 4789340238105717999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.8, y: 7.7, z: 149}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2783,9 +2783,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a3b14cf4245549970e0500b3186cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsToDisable:
+  _scriptsToDisable:
   - {fileID: 1463650218440104364}
   - {fileID: 4976850364864619968}
+  - {fileID: -5984422332178192767}
   - {fileID: 3685807903681467536}
   - {fileID: -4503594898022683808}
   - {fileID: 4293166623220412959}
@@ -2793,14 +2794,13 @@ MonoBehaviour:
   - {fileID: 3236696708777479881}
   - {fileID: 7991059486457800270}
   - {fileID: 3294415082727281027}
-  objectsToDisable:
+  _objectsToDisable:
+  - {fileID: 4184280354549682145}
   - {fileID: 1241548918238891519}
   - {fileID: 2742278235482890228}
   - {fileID: 2587564820352195230}
   - {fileID: 1361504759044930943}
   - {fileID: 8766531807417277359}
-  - {fileID: 4184280354549682145}
-  - {fileID: 4661078083538787763}
 --- !u!114 &577740939587886125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2813,6 +2813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a498e34ce5cb484cbb28a87627ce7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _NetworkedPosition: {x: -290, y: 1, z: 330}
+  _NetworkedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4949475820656303089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,7 +4118,6 @@ GameObject:
   - component: {fileID: 1955654061491882409}
   - component: {fileID: 2354352584459668508}
   - component: {fileID: 2599169501271413897}
-  - component: {fileID: 3501566562279352095}
   - component: {fileID: 7479507816341501052}
   m_Layer: 0
   m_Name: ResultCanvas
@@ -4212,20 +4213,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
---- !u!114 &3501566562279352095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8766531807417277359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f6f260cc623a94c9e047a23efb4750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 8766531807417277359}
-  xButton: {fileID: -1364686077696081529, guid: ea598c90f132d7048b02a857ff151abf, type: 3}
 --- !u!114 &7479507816341501052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4241,6 +4228,7 @@ MonoBehaviour:
   _winScreen: {fileID: 5366653854771134821}
   _loseScreen: {fileID: 2647023414498802807}
   _drawResultScreen: {fileID: 6786509360340126554}
+  _gameCanvas: {fileID: 1361504759044930943}
 --- !u!1 &8827414902736120475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,8 +4517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a9c73b2926deb4f9d4853be7dc39e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 2127191558903513089}
-  fireScript: {fileID: 3363486325905828886}
+  _socket: {fileID: 2127191558903513089}
+  _fireScript: {fileID: 3363486325905828886}
 --- !u!114 &9030805134930725658 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6665021860610051941, guid: fe811c24bbaef054c8e4e66f18ec165a, type: 3}

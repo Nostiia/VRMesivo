@@ -3,19 +3,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GunMagazineSocket : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor socket;
-    [SerializeField] private FireBulletOnActivate fireScript;
+    [SerializeField] private XRSocketInteractor _socket;
+    [SerializeField] private FireBulletOnActivate _fireScript;
 
     private void OnEnable()
     {
-        socket.selectEntered.AddListener(OnMagInserted);
-        socket.selectExited.AddListener(OnMagRemoved);
+        _socket.selectEntered.AddListener(OnMagInserted);
+        _socket.selectExited.AddListener(OnMagRemoved);
     }
 
     private void OnDisable()
     {
-        socket.selectEntered.RemoveListener(OnMagInserted);
-        socket.selectExited.RemoveListener(OnMagRemoved);
+        _socket.selectEntered.RemoveListener(OnMagInserted);
+        _socket.selectExited.RemoveListener(OnMagRemoved);
     }
 
     private void OnMagInserted(SelectEnterEventArgs args)
@@ -23,8 +23,7 @@ public class GunMagazineSocket : MonoBehaviour
         PlayerAmmo ammo = args.interactableObject.transform.GetComponent<PlayerAmmo>();
         if (ammo != null)
         {
-            fireScript.SetPlayerAmmo(ammo);
-            Debug.Log("Magazine inserted and ammo linked.");
+            _fireScript.SetPlayerAmmo(ammo);
         }
         else
         {
@@ -34,7 +33,6 @@ public class GunMagazineSocket : MonoBehaviour
 
     private void OnMagRemoved(SelectExitEventArgs args)
     {
-        fireScript.ClearAmmo();
-        Debug.Log("Magazine removed. Ammo reference cleared.");
+        _fireScript.ClearAmmo();
     }
 }

@@ -12,12 +12,8 @@ GameObject:
   - component: {fileID: -8086239660679260809}
   - component: {fileID: -1938031693080272687}
   - component: {fileID: 3550417527549281980}
-  - component: {fileID: 4510930604273966401}
-  - component: {fileID: -7264989307177776945}
   - component: {fileID: 7141356958401814444}
   - component: {fileID: -2177312756852172502}
-  - component: {fileID: 1655656886465888031}
-  - component: {fileID: -4603665885910838041}
   - component: {fileID: 2174214736583920171}
   m_Layer: 0
   m_Name: RedPlayerPrefab
@@ -86,12 +82,8 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3550417527549281980}
-  - {fileID: 4510930604273966401}
-  - {fileID: -7264989307177776945}
   - {fileID: 7141356958401814444}
   - {fileID: -2177312756852172502}
-  - {fileID: 1655656886465888031}
-  - {fileID: -4603665885910838041}
   - {fileID: 2174214736583920171}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &3550417527549281980
@@ -111,40 +103,6 @@ MonoBehaviour:
   SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 0
---- !u!114 &4510930604273966401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25901200661331521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c678f8dba6c3bb4ab0562d2d1d4221e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controller: {fileID: -8086239660679260809}
-  _animator: {fileID: 25901199926328580}
-  _playerHP: {fileID: 7141356958401814444}
-  _playerSpeed: 2
-  _rotationSpeed: 2
---- !u!114 &-7264989307177776945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25901200661331521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc94f6d6c6160943ac91539259d7f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabBullet: {fileID: 202201399967073985, guid: 30272011a93f39e419f7012a292fa1e8, type: 3}
-  _shootPoint: {fileID: 0}
-  _camera: {fileID: 0}
-  _playerHP: {fileID: 7141356958401814444}
-  _playerAmmo: {fileID: -2177312756852172502}
 --- !u!114 &7141356958401814444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HP: 20
+  _hpText: {fileID: 0}
   _resultManager: {fileID: 0}
   _enemy: {fileID: 0}
   __enemyDied: 0
-  _animator: {fileID: 25901199926328580}
 --- !u!114 &-2177312756852172502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,33 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Ammo: 5
---- !u!114 &1655656886465888031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25901200661331521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4db6d09ef8a997419c80937dbb814b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _MagazineCount: 0
-  _playerAmmo: {fileID: -2177312756852172502}
---- !u!114 &-4603665885910838041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25901200661331521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4c1e1afc3e3a340a222f1bb3a2136d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerCamera: {fileID: 0}
+  _ammoText: {fileID: 0}
 --- !u!114 &2174214736583920171
 MonoBehaviour:
   m_ObjectHideFlags: 0

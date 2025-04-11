@@ -1,11 +1,10 @@
 using Fusion;
 using TMPro;
 using UnityEngine;
-using Zenject;
 
 public class PlayerAmmo : NetworkBehaviour
 {
-    [Networked] public int Ammo { get; set; } = 5;
+    [Networked] public int Ammo { get; private set; } = 5;
     [SerializeField] private TMP_Text _ammoText;
     private int _ammoMax;
 

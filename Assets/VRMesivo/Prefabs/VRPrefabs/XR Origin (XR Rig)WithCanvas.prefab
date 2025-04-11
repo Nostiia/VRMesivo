@@ -1814,7 +1814,7 @@ Transform:
   m_GameObject: {fileID: 4789340238105717999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.8, y: 7.7, z: 149}
+  m_LocalPosition: {x: -13, y: 1, z: 149}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1857,10 +1857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cdbcbbcde100040919ff6330683e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _yellowPosition: {fileID: 0}
-  _redPosition: {fileID: 0}
-  _yellowTeam: {fileID: 0}
-  _redTeam: {fileID: 0}
   _timerManager: {fileID: 0}
   _readyButton: {fileID: 8770437299618470314}
 --- !u!114 &1463650218440104364
@@ -2042,18 +2038,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a3b14cf4245549970e0500b3186cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptsToDisable:
+  _scriptsToDisable:
   - {fileID: 1463650218440104364}
   - {fileID: 4976850364864619968}
+  - {fileID: -5984422332178192767}
   - {fileID: 3685807903681467536}
   - {fileID: -4503594898022683808}
   - {fileID: 4293166623220412959}
-  objectsToDisable:
+  _objectsToDisable:
   - {fileID: 1241548918238891519}
   - {fileID: 2742278235482890228}
   - {fileID: 2587564820352195230}
   - {fileID: 1361504759044930943}
-  - {fileID: 4661078083538787763}
 --- !u!114 &4581453323512763661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,14 +2062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a498e34ce5cb484cbb28a87627ce7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 7675188124379754798}
-  leftHand: {fileID: 3055112867888168478}
-  rightHand: {fileID: 1051435728595607212}
-  body: {fileID: 2750358048152375897}
-  netHead: {fileID: 0}
-  netLeft: {fileID: 0}
-  netRight: {fileID: 0}
-  netBody: {fileID: 0}
+  _NetworkedPosition: {x: 0, y: 0, z: 0}
+  _NetworkedRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5071062662925715463
 GameObject:
   m_ObjectHideFlags: 0
